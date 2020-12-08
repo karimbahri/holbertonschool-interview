@@ -2,6 +2,8 @@
 """
 solving Lockboxes problem
 """
+
+
 def canUnlockAll(boxes):
     """
     check if boxes can be unlocked
