@@ -10,6 +10,8 @@ def canUnlockAll(boxes):
     """
     length = len(boxes)
     nb = 0
+    if not length or type(boxes) != list:
+        return False
 
     for i in range(length):
         for ls in boxes:
