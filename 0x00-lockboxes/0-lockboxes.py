@@ -11,8 +11,6 @@ def canUnlockAll(boxes):
     length = len(boxes)
     nb = 0
 
-    if length < 2:
-        return True
 
     for i in range(length):
         for ls in boxes:
