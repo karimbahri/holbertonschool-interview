@@ -3,11 +3,12 @@
 interview question: minimum operation
 """
 
+
 def minOperations(n):
     """
-    method that calculates the 
-    fewest number of operations 
-    needed to result in exactly 
+    method that calculates the
+    fewest number of operations
+    needed to result in exactly
     n H characters in the file.
     """
     i = 0
@@ -16,5 +17,6 @@ def minOperations(n):
         while not n % nb:
             i += nb
             n /= nb
+            n = int(n)
         nb += 1
     return i
