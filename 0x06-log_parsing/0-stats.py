@@ -13,8 +13,8 @@ log = ""
 try:
     import sys
     for log in sys.stdin:
-        count += 1
         word = log.split(" ")
+        count += 1
         if len(word) >= 1:
             length += int(word[-1])
             if word[-2] in status:
@@ -25,8 +25,8 @@ try:
             for key in status.keys():
                 if status[key] != 0:
                     print("%s: %d" % (key, status[key]))
-except:
-    continue
+except KeyboardInterrupt:
+    pass
 else:
     print("file size:", length)
     for key in status.keys():
