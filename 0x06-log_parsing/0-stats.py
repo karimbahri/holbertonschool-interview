@@ -20,7 +20,7 @@ try:
             if word[-2] in status:
                 status[word[-2]] += 1
 
-        if count == 10:
+        if not count % 10:
             print("File size:", length)
             for key in status.keys():
                 if status[key] != 0:
