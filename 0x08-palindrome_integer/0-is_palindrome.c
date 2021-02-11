@@ -9,13 +9,12 @@
  */
 _U_Long_ reverse_integer(_U_Long_ integer)
 {
-	_U_Long_ tmp = integer;
 	_U_Long_ reverse = 0;
 
-	while (tmp)
+	while (integer)
 	{
-		reverse = (reverse * 10) + (tmp % 10);
-		tmp /= 10;
+		reverse = (reverse * 10) + (integer % 10);
+		integer /= 10;
 	}
 	return (reverse);
 }
