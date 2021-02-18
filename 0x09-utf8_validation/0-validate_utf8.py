@@ -4,7 +4,7 @@
 
 def validUTF8(data):
     """a method to check for utf8 validation"""
-    if type(data) != list or not len(data):
+    if type(data) != list:
         return False
     for element in data:
         if type(element) != int:
