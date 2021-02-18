@@ -4,13 +4,8 @@
 
 def validUTF8(data):
     """a method to check for utf8 validation"""
-    if type(data) != list:
+    try:
+        bytes(data).decode('UTF-8')
+        return True
+    except:
         return False
-    for element in data:
-        if type(element) != int:
-            return False
-        if 193 < element < 245:
-            continue
-        if element > 191:
-            return False
-    return True
