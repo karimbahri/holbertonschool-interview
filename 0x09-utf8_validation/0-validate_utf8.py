@@ -9,6 +9,7 @@ def validUTF8(data):
     for element in data:
         if type(element) != int:
             return False
-        if element > 127:
+        #if <= element <= or <= element <=
+        if element > 191:
             return False
     return True
