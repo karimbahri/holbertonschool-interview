@@ -10,7 +10,7 @@
  */
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-		if (!array || size < 1)
+		if (!array)
 			return (NULL);
 		return (convertToAVL(array, NULL, 0, size - 1));
 }
