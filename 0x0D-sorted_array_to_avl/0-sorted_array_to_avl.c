@@ -33,16 +33,15 @@ avl_t *convertToAVL(int *array, avl_t *parent, int beg, int end)
 	if (!node)
 		return (NULL);
 
-	if (beg > end)
-	{
-		return (NULL);
-	}
-	else
+	if (beg <= end)
 	{
 		node->n = array[middle];
 		node->parent = parent;
-		node->left = convertToAVL(array, node, beg, middle - 1);
-		node->right = convertToAVL(array, node, middle + 1, end);
+		if (middle > beg)
+			node->left = convertToAVL(array, node, beg, middle - 1);
+		if (middle < end)
+			node->right = convertToAVL(array, node, middle + 1, end);
 		return (node);
 	}
+	return (NULL);
 }
