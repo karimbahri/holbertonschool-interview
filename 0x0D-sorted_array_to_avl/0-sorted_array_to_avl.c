@@ -12,6 +12,10 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 {
 		if (!array)
 			return (NULL);
+
+		if (!size)
+			return (NULL);
+
 		return (convertToAVL(array, NULL, 0, size - 1));
 }
 
