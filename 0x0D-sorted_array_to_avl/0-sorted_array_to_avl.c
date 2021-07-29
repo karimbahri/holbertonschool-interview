@@ -12,7 +12,6 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 {
 		if (!array)
 			return (NULL);
-			
 		return (convertToAVL(array, NULL, 0, size - 1));
 }
 
@@ -34,7 +33,11 @@ avl_t *convertToAVL(int *array, avl_t *parent, int beg, int end)
 	if (!node)
 		return (NULL);
 
-	if (beg <= end)
+	if (beg > end)
+	{
+		return (NULL);
+	}
+	else
 	{
 		node->n = array[middle];
 		node->parent = parent;
@@ -42,5 +45,4 @@ avl_t *convertToAVL(int *array, avl_t *parent, int beg, int end)
 		node->right = convertToAVL(array, node, middle + 1, end);
 		return (node);
 	}
-	return (NULL);
 }
