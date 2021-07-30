@@ -29,15 +29,12 @@ avl_t *convertToAVL(int *array, avl_t *parent, int beg, int end)
 	int middle = (beg + end) / 2;
 
 
-	node = malloc(sizeof(avl_t));
-	if (!node)
-		return (NULL);
-
-	node->left = NULL;
-	node->right = NULL;
-
 	if (beg <= end)
 	{
+		node = malloc(sizeof(avl_t));
+		if (!node)
+			return (NULL);
+
 		node->n = array[middle];
 		node->parent = parent;
 		node->left = convertToAVL(array, node, beg, middle - 1);
@@ -46,3 +43,18 @@ avl_t *convertToAVL(int *array, avl_t *parent, int beg, int end)
 	}
 	return (NULL);
 }
+
+/*
+*void _binary_tree_delete(binary_tree_t *tree)
+*{
+*	if (!tree)
+*		return;
+*
+*	binary_tree_t *tmp_left = tree->left;
+*	binary_tree_t *tmp_right = tree->right;
+*
+*	free(tree);
+*	_binary_tree_delete(tmp_left);
+*	_binary_tree_delete(tmp_right);
+*}
+*/
