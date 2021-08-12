@@ -19,7 +19,7 @@ request(`https://swapi-api.hbtn.io/api/films/${process.argv[2]}/`, async (err, r
   }
   const charactersAPI = JSON.parse(body).characters;
   const characters = [];
-  for (const key in charactersAPI) {
+  for (let key in charactersAPI) {
     characters.push(await getCharacterName(charactersAPI[key]));
   }
   for (const element of characters) {
