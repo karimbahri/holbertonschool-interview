@@ -12,12 +12,12 @@ const getCharacterName = (url) => {
   });
 };
 
-request('https://swapi-api.hbtn.io/api/films/', async (err, res, body) => {
+request(`https://swapi-api.hbtn.io/api/films/${process.argv[2]}/`, async (err, res, body) => {
   if (err) {
     console.error(err);
     return;
   }
-  const charactersAPI = JSON.parse(body).results[2].characters;
+  const charactersAPI = JSON.parse(body).characters;
   const characters = [];
   for (const key in charactersAPI) {
     characters.push(await getCharacterName(charactersAPI[key]));
