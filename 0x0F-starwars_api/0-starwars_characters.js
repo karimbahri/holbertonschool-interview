@@ -7,7 +7,9 @@ const getCharacterName = (url) => {
     request(url, (err, res, body) => {
       if (err) {
         reject(err);
-      } else { resolve(JSON.parse(body).name); }
+      } else {
+        resolve(JSON.parse(body).name);
+      }
     });
   });
 };
@@ -18,10 +20,11 @@ request(`https://swapi-api.hbtn.io/api/films/${process.argv[2]}/`, async (err, r
     return;
   }
   const charactersAPI = JSON.parse(body).characters;
-  const characters = [];
+  const reqPromises = [];
   for (const key in charactersAPI) {
-    characters.push(await getCharacterName(charactersAPI[key]));
+    reqPromises.push(getCharacterName(charactersAPI[key]));
   }
+  const characters = await Promise.all(reqPromises);
   for (const element of characters) {
     console.log(element);
   }
