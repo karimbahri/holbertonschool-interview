@@ -7,6 +7,9 @@ def rain(walls):
         take walls(list) as argument
         calculate the sum of of square unit of water
     """
+    if not walls:
+        return 0
+
     sum_cube = 0
     length = len(walls) - 1
     for index in range(length):
