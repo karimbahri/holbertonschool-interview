@@ -8,7 +8,7 @@ def rain(walls):
         calculate the sum of of square unit of water
     """
     sum_cube = 0
-    length = len(walls)
+    length = len(walls) - 1
     for index in range(length):
         count = 0
         if walls[index]:
