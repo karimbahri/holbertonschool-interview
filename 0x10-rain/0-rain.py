@@ -12,7 +12,7 @@ def rain(walls):
 
     sum_cube = 0
     length = len(walls) - 1
-    for index in range(1, length):
+    for index in range(length):
         count = 0
         if walls[index]:
             first_peak = walls[index]
