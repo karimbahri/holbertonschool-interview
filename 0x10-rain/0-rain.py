@@ -17,7 +17,7 @@ def rain(walls):
         if walls[index]:
             first_peak = walls[index]
             index += 1
-            while(walls[index] == 0 and index < length):
+            while(walls[index] < first_peak and index < length):
                 count += 1
                 index += 1
             sum_cube += min(first_peak, walls[index]) * count
