@@ -23,6 +23,9 @@ void heap_sort(int *array, size_t size)
 {
 	int i = 0;
 
+	if (array == NULL)
+		return;
+
 	for (i = (size / 2) - 1 ; i > -1 ; i--)
 		array_heapify(array, i, size, size);
 
