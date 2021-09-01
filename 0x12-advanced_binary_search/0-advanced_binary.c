@@ -32,11 +32,6 @@ int search_recursively(int *array, size_t beg, size_t end, int value)
 	if (beg >= end)
 		return (-1);
 	middle = (beg + end) / 2;
-	if (array[middle] == value)
-	{
-		if (beg == end - 1)
-			return (middle);
-	}
 	i = beg;
 	printf("Searching in array: ");
 	while (i < end)
@@ -45,6 +40,11 @@ int search_recursively(int *array, size_t beg, size_t end, int value)
 		i++;
 	}
 	printf("%d\n", array[i]);
+	if (array[middle] == value)
+	{
+		if (beg == end - 1)
+			return (middle);
+	}
 	if (array[middle] < value)
 		return (search_recursively(array, middle + 1, end, value));
 	else
