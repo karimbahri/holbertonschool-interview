@@ -14,18 +14,18 @@ int main(int argc, char **argv)
 
 	if (argc < 3)
 	{
-		printf("Error\n");
+		_printf("Error\n");
 		exit(98);
 	}
 	if (!check_digit(argv[1]) || !check_digit(argv[2]))
 	{
-		printf("Error\n");
+		_printf("Error\n");
 		exit(98);
 	}
 	nb1 = strtoull(argv[1], NULL, 10);
 	nb2 = strtoull(argv[2], NULL, 10);
 
-	printf("%lld\n", nb1 * nb2);
+	_printf("%lld\n", nb1 * nb2);
 	return (1);
 }
 
