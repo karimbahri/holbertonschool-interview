@@ -22,8 +22,8 @@ int main(int argc, char **argv)
 		_printf("Error\n");
 		exit(98);
 	}
-	nb1 = strtoull(argv[1], NULL, 10);
-	nb2 = strtoull(argv[2], NULL, 10);
+	nb1 = _strtoull(argv[1], NULL, 10);
+	nb2 = _strtoull(argv[2], NULL, 10);
 
 	_printf("%lld\n", nb1 * nb2);
 	return (1);
