@@ -29,7 +29,7 @@ void merge_sort(int *array, size_t size)
 		return;
 	if (size < 2)
 		return;
-	
+
 	merged = malloc(size * sizeof(int));
 	if (!merged)
 		return;
