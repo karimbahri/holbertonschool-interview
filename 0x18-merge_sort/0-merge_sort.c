@@ -1,7 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "sort.h"
-
+/**
+ * cpy - copy array
+ * @src: array to copy
+ * @dest: destination
+ * @size: array's length
+ */
 void cpy(int *src, int *dest, int size)
 {
 	int i = 0;
@@ -29,11 +34,17 @@ void merge_sort(int *array, size_t size)
 	if (!merged)
 		return;
 
-	shift(array, merged, size);
+	merge_wrap(array, merged, size);
 	free(merged);
 }
 
-void shift(int *array, int *merged, size_t size)
+/**
+ * merge_wrap - sort array using merge array algorithm
+ * @array: array to sort
+ * @merged: tmp copy of array
+ * @size: array's length
+ */
+void merge_wrap(int *array, int *merged, size_t size)
 {
 	int middle = 0;
 
@@ -41,11 +52,18 @@ void shift(int *array, int *merged, size_t size)
 		return;
 
 	middle = size / 2;
-	shift(array, merged, middle);
-	shift(array + middle, merged, size - middle);
+	merge_wrap(array, merged, middle);
+	merge_wrap(array + middle, merged, size - middle);
 	merge(array, merged, middle, size);
 }
 
+/**
+ * merge - merge array
+ * @array: array to merge
+ * @merged: copy of array
+ * @middle: middle
+ * @size: array length
+ */
 void merge(int *array, int *merged, int middle, int size)
 {
 	int i, j, k;
