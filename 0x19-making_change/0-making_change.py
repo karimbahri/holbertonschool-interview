@@ -14,7 +14,7 @@ def makeChange(coins, total):
             return the fewest number of coins to meet total
             otherwise -1
     """
-    if total <= 0:
+    if total < 1:
         return 0
 
     coins.sort()
