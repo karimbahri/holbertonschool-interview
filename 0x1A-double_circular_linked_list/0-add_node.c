@@ -3,6 +3,12 @@
 #include <string.h>
 #include "list.h"
 
+/**
+  * add_node_end - add node  to the end of circular linked list
+  * @list: linked list
+  * @str: string to add
+  * Return: reference to the added node
+  */
 List *add_node_end(List **list, char *str)
 {
 	List *node = NULL, *posList = *list;
@@ -37,6 +43,13 @@ List *add_node_end(List **list, char *str)
 	return (node);
 }
 
+
+/**
+  * add_node_begin - add node  to the beginning of circular linked list
+  * @list: linked list
+  * @str: string to add
+  * Return: reference to the added node
+  */
 List *add_node_begin(List **list, char *str)
 {
 	List *node = NULL, *posList = *list;
