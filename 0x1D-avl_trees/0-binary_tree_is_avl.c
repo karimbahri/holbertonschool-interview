@@ -27,6 +27,8 @@ int binary_tree_is_avl_recursive(const binary_tree_t *tree, int min, int max)
 {
 	int left = 0;
 	int right = 0;
+	int _min = 0;
+	int _max = 0;
 
 	if (!tree)
 		return (1);
@@ -42,8 +44,11 @@ int binary_tree_is_avl_recursive(const binary_tree_t *tree, int min, int max)
 	if (tree->n > max)
 		return (0);
 
-	return (binary_tree_is_avl_recursive(tree->left, min, tree->n - 1) &&
-			binary_tree_is_avl_recursive(tree->right, tree->n + 1, max));
+	_min = tree->n + 1;
+	_max = tree->n - 1;
+
+	return (binary_tree_is_avl_recursive(tree->left, min, _max) &&
+			binary_tree_is_avl_recursive(tree->right, _min, max));
 }
 
 /**
