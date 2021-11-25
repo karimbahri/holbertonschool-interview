@@ -51,7 +51,7 @@ int binary_tree_is_avl_recursive(const binary_tree_t *tree, int min, int max)
  * @tree: tree to target
  * Return: height of the tree
  */
-int length_tree(binary_tree_t *tree)
+int length_tree(const binary_tree_t *tree)
 {
 	int left = 0;
 	int right = 0;
