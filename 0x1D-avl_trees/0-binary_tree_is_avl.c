@@ -10,10 +10,10 @@
  */
 int binary_tree_is_avl(const binary_tree_t *tree)
 {
-	if (!tree)
-		return (0);
+	if (tree)
+		return (binary_tree_is_avl_recursive(tree, INT_MIN, INT_MAX));
 
-	return (binary_tree_is_avl_recursive(tree, INT_MIN, INT_MAX));
+	return (0);
 }
 
 /**
