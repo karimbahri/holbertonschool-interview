@@ -42,7 +42,8 @@ int binary_tree_is_avl_recursive(const binary_tree_t *tree, int min, int max)
 	if (tree->n > max)
 		return (0);
 
-	return (binary_tree_is_avl_recursive(tree->left, min, tree->n - 1) && binary_tree_is_avl_recursive(tree->right, tree->n + 1, max));
+	return (binary_tree_is_avl_recursive(tree->left, min, tree->n - 1) &&
+			binary_tree_is_avl_recursive(tree->right, tree->n + 1, max));
 }
 
 /**
