@@ -21,5 +21,5 @@ typedef struct binary_tree_s avl_t;
 void binary_tree_print(const binary_tree_t *);
 int binary_tree_is_avl(const binary_tree_t *tree);
 int binary_tree_is_avl_recursive(const binary_tree_t *tree, int min, int max);
-int length_tree(binary_tree_t *tree);
+int length_tree(const binary_tree_t *tree);
 #endif
