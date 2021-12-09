@@ -1,6 +1,15 @@
 #!/usr/bin/python3
 """0-pascal_triangle"""
-from math import factorial
+
+
+def factorial(n):
+    """factorial:
+        return factorial number of n
+    """
+    _factorial = 1
+    for i in range(1, n + 1):
+        _factorial = _factorial * i
+    return _factorial
 
 
 def pascal_triangle(n):
