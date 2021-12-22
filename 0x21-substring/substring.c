@@ -52,5 +52,5 @@ int *find_substring(char const *s, char const **words, int nb_words, int *n)
 	}
 	free(arrayOfWords);
 	*n = l;
-
+	return (arrayOfScans);
 }
